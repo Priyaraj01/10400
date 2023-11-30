@@ -1,0 +1,101 @@
+package miniprojectcollection;
+
+public class Movie 
+{
+	private int MovieID;
+	private String MovieName;
+	private String ActorName;
+	private String ActoressName;
+	private String DirectorName;
+	private Float MovieTicketCost;
+	
+	public Movie() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Movie(int MovieID, String MovieName, String ActorName, String ActoressName, String DirectorName, Float MovieTicketCost) 
+	{
+		super();
+		this.MovieID = MovieID;
+		this.MovieName = MovieName;
+		this.ActorName = ActorName;
+		this.ActorName = ActoressName;
+		this.DirectorName = DirectorName;
+		this.MovieTicketCost = MovieTicketCost;
+		
+	}
+
+
+	public int getMovieID() {
+		return MovieID;
+	}
+
+
+	public void setMovieID(int movieID) {
+		MovieID = movieID;
+	}
+
+
+	public String getMovieName() {
+		return MovieName;
+	}
+
+
+	public void setMovieName(String movieName) {
+		MovieName = movieName;
+	}
+
+
+	public String getDirectorName() {
+		return DirectorName;
+	}
+
+
+	public void setDirectorName(String directorName) {
+		DirectorName = directorName;
+	}
+
+
+	public String getActorName() {
+		return ActorName;
+	}
+
+
+	public void setActorName(String actorName) {
+		ActorName = actorName;
+	}
+
+
+	public String getActoressName() {
+		return ActoressName;
+	}
+
+
+	public void setActoressName(String actoressName) {
+		ActoressName = actoressName;
+	}
+
+
+	public Float getMovieTicketCost() {
+		return MovieTicketCost;
+	}
+
+
+	public void setMovieTicketCost(Float movieTicketCost) {
+		MovieTicketCost = movieTicketCost;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Movie [MovieID=" + MovieID + ", MovieName=" + MovieName + ", DirectorName=" + DirectorName
+				+ ", ActorName=" + ActorName + ", ActoressName=" + ActoressName + ", MovieTicketCost=" + MovieTicketCost
+				+ ", getMovieID()=" + getMovieID() + ", getMovieName()=" + getMovieName() + ", getDirectorName()="
+				+ getDirectorName() + ", getActorName()=" + getActorName() + ", getActoressName()=" + getActoressName()
+				+ ", getMovieTicketCost()=" + getMovieTicketCost() +"]";
+	}
+
+	
+}

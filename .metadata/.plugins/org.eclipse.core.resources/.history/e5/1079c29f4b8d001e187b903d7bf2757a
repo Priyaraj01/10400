@@ -1,0 +1,185 @@
+package miniprojectcollection;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MovieApp 
+{
+	static Scanner sc=new Scanner(System.in);
+
+	ArrayList<Movie> MovieList=new ArrayList<Movie>();
+	MovieApp()
+	{
+		
+		MovieList.add(new Movie(101,"Leo","Vijay","Trisha","Logesh Ganagaraj",399.45));
+		MovieList.add(new Movie(102,"Doctor","Shivakarthikeyan","Priyanga Mohan","Nelson",250.25));
+		MovieList.add(new Movie(103,"Kushi","Vijay","Jothiga","SJ Surya",276.00));
+		MovieList.add(new Movie(104,"Visuvasam","Ajith","Nayanthara","Siva",315.05));
+		MovieList.add(new Movie(105,"Singam","Surya","Anushka","Hari",289.52));
+		
+	}
+	public void ViewAllMovieInfo()
+	{   		
+		System.out.println("==================================================================================================");
+
+		if(MovieList.size()==0)
+		{
+			System.out.println("No record found!!");
+		}
+		
+		
+		for(Movie m:MovieList)
+		{
+			
+				System.out.println("Movie ID:"+m.getMovieID()+"\t Movie Name:"+m.getMovieName()+"\t Actor Name:"+m.getActorName()+"\t MovieTicketCost:"+m.getMovieTicketCost()+"\t Director Name:"+m.getDirectorName());
+			
+		}
+		System.out.println("==================================================================================================");
+
+	}
+	public void AddMovieInfo() 
+	{
+		System.out.println("Enter Movie Id: ");
+		int MovieId=sc.nextInt();
+		System.out.println("Enter Movie Name: ");
+		String MovieName=sc.next();
+		System.out.println("Enter Actor Name: ");
+		String ActorName=sc.next();
+		System.out.println("Enter Actoress Name: ");
+		String ActoressName=sc.next();
+		System.out.println("Enter Director Name: ");
+	    String DirectorName=sc.next();
+	    System.out.println("Enter Ticket Cost: ");
+	    Double MovieTicketCost=sc.nextDouble();
+		
+		Movie m=new Movie(MovieId, MovieName, ActorName, ActoressName, DirectorName,MovieTicketCost);
+		
+		MovieList.add(m);
+	}
+	public void ViewMovieInfoById() 
+	{
+		System.out.println("Enter Movie id:");
+		int MovieId=sc.nextInt();//101
+	    int flag=0;
+		System.out.println("==================================================================================================");
+
+		for(Movie m:MovieList)
+		{
+			if(MovieId==m.getMovieID())//101==101
+			{   flag=1;
+				System.out.println("Movie Name:"+m.getMovieName()+"\t "
+						+ "ActorName:"+m.getActorName()+"\t "
+								+ "Actoress:"+m.getActoressName()+
+								"\t Director Name:"+m.getDirectorName());
+			}
+		}
+		
+		if(flag==0)
+			System.out.println("Movie Id does not exist!!");
+		System.out.println("==================================================================================================");
+	
+	}
+	public void UpdateTicketCostById()
+	{
+		System.out.println("Enter Movie Id:");
+		int MovieTicketCost=sc.nextInt();
+	    int flag=0,index = 0;
+	    Movie m=null;
+	    for(Movie Ticket:MovieList)//101
+	    {
+	    	if(Ticket.getMovieTicketCost()==MovieTicketCost)//101==101
+	    	{
+	    		flag=1;
+	    		index=MovieList.indexOf(Ticket);//101
+	    		//System.out.println(index);
+	    		m=Ticket;
+	    		break;
+	    	}
+	    }
+	    
+	    if(flag==1)
+	    {
+	    	System.out.println("Enter Movie Name: ");
+			String MovieName=sc.next();
+			System.out.println("Enter Actor Name: ");
+			String ActorName=sc.next();
+			System.out.println("Enter Actoress Name: ");
+			String ActoressName=sc.next();
+			System.out.println("Enter Director Name: ");
+		    String DirectorName=sc.next();
+		    System.out.println("Enter Ticket Cost: ");
+		    Double MveTicketCost=sc.nextDouble();
+			
+			m.setMovieName(MovieName);
+			m.setActorName(ActorName);
+			m.setActoressName(ActoressName);
+			m.setDirectorName(DirectorName);
+			m.setMovieTicketCost(MveTicketCost);
+			
+			MovieList.set(index,m);
+			System.out.println("==================================================================================================");
+
+			System.out.println("Movie Details updated!!");
+	    }
+	    else
+	    {
+	    	System.out.println("Id does not exist!!");
+	    }
+		System.out.println("==================================================================================================");
+
+	}
+	public void DeleteAllMovieInfo()
+	{
+		System.out.println("==================================================================================================");
+
+		if(MovieList.size()>0)
+		{
+			MovieList.clear();
+			System.out.println("All records deleted successfully!!");
+		}
+		else
+		{
+			System.out.println("No record available!!");
+		}
+		System.out.println("==================================================================================================");
+
+	}
+	public void DeleteMovieById() 
+	{
+		System.out.println("Enter Movie ID :");
+		int MovieID=sc.nextInt();//101
+		int index=0,flag=0;
+		Movie i=null;
+		
+		for(Movie ID:MovieList)
+		{
+			if(MovieID==ID.getMovieID())//101
+			{
+				flag=1;
+				index=MovieList.indexOf(ID);
+				i=ID;
+				//System.out.println(index);
+				//System.out.println(ID);
+				break;
+			}
+		}
+		System.out.println("==================================================================================================");
+
+		if(flag==0)
+		{
+			System.out.println("Movie ID does not exist!!");
+		}
+		else
+		{
+			MovieList.remove(i);
+			System.out.println("Movie record deleted successfully!!");
+		}
+		
+		System.out.println("==================================================================================================");
+
+	}
+	
+	
+	
+
+}

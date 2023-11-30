@@ -1,0 +1,21 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class InsertExample {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/10400batch","root","root");
+		PreparedStatement ps=con.prepareStatement("insert into admin values(?,?,?)");
+		ps.setString(1,"Priyaraj");
+		ps.setString(2,"Priyaraj@123");
+		ps.executeUpdate();
+		con.close();
+		 System.out.println("inserted successfully");
+		
+	}
+
+}

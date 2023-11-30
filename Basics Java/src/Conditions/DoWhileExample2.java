@@ -1,0 +1,20 @@
+package Conditions;
+import java.util.Scanner;
+public class DoWhileExample2 {
+
+	public static void main(String[] args) {
+				try (Scanner sc = new Scanner(System.in)) {
+					System.out.println("enter the number");
+					int n=sc.nextInt();//123
+					int digit=0;
+					do 
+					{
+						digit=n%10;//3
+						System.out.println(digit);//3 2 1
+						n=n/10;//n=12 n=1 0
+					}
+            while(n!=0);
+				}
+			}
+
+		}

@@ -1,0 +1,99 @@
+package miniprojectcollection;
+
+public class Movie 
+{
+	private int MovieID;
+	private String MovieName;
+	private String ActorName;
+	private String ActoressName;
+	private String DirectorName;
+	private Double TicketPrice;
+	
+	public Movie() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Movie(int MovieID, String MovieName, String ActorName, String ActoressName, String DirectorName, Double TicketPrice) 
+	{
+		super();
+		this.MovieID = MovieID;
+		this.MovieName = MovieName;
+		this.ActorName = ActorName;
+		this.ActorName = ActoressName;
+		this.DirectorName = DirectorName;
+		this.TicketPrice = TicketPrice;
+		
+	}
+
+
+	public int getMovieID() {
+		return MovieID;
+	}
+
+
+	public void setMovieID(int movieID) {
+		MovieID = movieID;
+	}
+
+
+	public String getMovieName() {
+		return MovieName;
+	}
+
+
+	public void setMovieName(String movieName) {
+		MovieName = movieName;
+	}
+
+
+	public String getActorName() {
+		return ActorName;
+	}
+
+
+	public void setActorName(String actorName) {
+		ActorName = actorName;
+	}
+
+
+	public String getActoressName() {
+		return ActoressName;
+	}
+
+
+	public void setActoressName(String actoressName) {
+		ActoressName = actoressName;
+	}
+
+
+	public String getDirectorName() {
+		return DirectorName;
+	}
+
+
+	public void setDirectorName(String directorName) {
+		DirectorName = directorName;
+	}
+
+
+	public Double getTicketPrice() {
+		return TicketPrice;
+	}
+
+
+	public void setMovieTicketCost(Double TicketPrice) {
+		TicketPrice = this.TicketPrice;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Movie [MovieID=" + MovieID + ", MovieName=" + MovieName + ", ActorName=" + ActorName + ", ActoressName="
+				+ ActoressName + ", DirectorName=" + DirectorName + ", TicketPrice=" + TicketPrice + "]";
+	}
+
+
+	
+}
